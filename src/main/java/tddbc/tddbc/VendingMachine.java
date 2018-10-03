@@ -3,14 +3,6 @@ package tddbc.tddbc;
 public class VendingMachine {
 	private boolean purchaseOn;
 
-	public String pushButton() {
-		System.out.println(this.purchaseOn);
-		if(this.purchaseOn) {
-			return "コーラ";
-		}
-		return "";
-	}
-
 	public boolean insertCoin(int money) {
 
 		if(money == 100) {
@@ -18,8 +10,26 @@ public class VendingMachine {
 			return true;
 		}
 		this.purchaseOn = false;
-		System.out.println(this.purchaseOn);
+
 		return false;
+	}
+
+	public String getProductName(int id) {
+		if(id == 1) {
+			return "コーラ";
+		}
+		if(id == 2) {
+			return "烏龍茶";
+		}
+		return "";
+	}
+
+	public String pushButton(int id) {
+		if(this.purchaseOn) {
+			return "コーラ";
+
+		}
+		return "";
 	}
 
 }
